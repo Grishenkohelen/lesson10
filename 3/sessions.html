@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let sessions = JSON.parse(localStorage.getItem('sessions'))
+
+  for (let i = 0;i < sessions.length;i++){
+      let div = document.createElement('div');
+      document.body.appendChild(div);
+      div.style.border = 'solid black 1px';
+      div.style.marginBottom = '10px'
+
+      let p = document.createElement('p');
+      p.innerText = 'num=' + i;
+      div.appendChild(p);
+
+      let p1 = document.createElement('p');
+      p1.innerText = 'date:' + sessions[i].date + '  ' + 'time:' + sessions[i].time;
+      div.appendChild(p1);
+  };
+
+</script>
+</body>
+</html>

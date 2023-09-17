@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+  let day = new Date().getDate();
+  let month = new Date().getMonth()+1;
+  let year = new Date().getFullYear();
+  let date = day + '.' + month + '.' + year;
+  let hour = new Date().getHours();
+  let minute = new Date().getMinutes();
+  let seconds = new Date().getSeconds();
+  let time = hour + ':' + minute + ':' + seconds;
+
+  let sessions = [];
+
+  sessions = JSON.parse(localStorage.getItem('sessions'));
+
+  localStorage.setItem('content', JSON.stringify({date: date, time: time}));
+
+  // if(JSON.parse(localStorage.getItem('sessions'))!==null){
+  //     sessions.push(JSON.parse(localStorage.getItem('content')))
+  // }
+
+  window.onload = function () {
+      sessions.push({date: date, time: time})
+      localStorage.setItem('sessions', JSON.stringify(sessions));
+  };
+
+  console.log(localStorage.getItem('sessions'));
+
+</script>
+</body>
+</html>

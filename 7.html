@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input id="row" type="text" placeholder="row" name="row" required>
+<input id="column" type="text" placeholder="column" name="column" required>
+<input id="content" type="text" placeholder="content" name="content" required>
+<button id="submit">submit</button>
+
+<script>
+  let row;
+  let column;
+  let content;
+
+  let inputRow = document.getElementById('row');
+  let inputColumn = document.getElementById('column');
+  let inputContent = document.getElementById('content');
+  let btn = document.getElementById('submit');
+
+  btn.onclick = function () {
+      row = inputRow.value;
+      column = inputColumn.value;
+      content = inputContent.value;
+
+      let table = document.createElement('table');
+      document.body.appendChild(table);
+
+      for (let i = 0; i < row; i++) {
+          let tr = document.createElement('tr');
+          table.appendChild(tr);
+          for (let j = 0; j < column; j++) {
+              let td = document.createElement('td');
+              td.style.border = 'solid black 1px';
+              tr.appendChild(td);
+              let p = document.createElement('p');
+              p.innerText = content;
+              td.appendChild(p)
+          }
+      }
+  };
+
+</script>
+
+</body>
+</html>

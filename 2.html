@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+<script>
+
+    window.onload = function (){
+        let buffer = JSON.parse(localStorage.getItem('load')) + 1;
+        localStorage.setItem('load', JSON.parse(buffer));
+        console.log(localStorage.getItem('load'))
+    }
+
+    let div = document.createElement('div');
+    document.body.appendChild(div);
+
+    let h3 = document.createElement('h3');
+    h3.innerText = `${localStorage.getItem('load')}`;
+    div.appendChild(h3);
+
+</script>
+
+</body>
+</html>
